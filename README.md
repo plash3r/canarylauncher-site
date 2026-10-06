@@ -1,8 +1,12 @@
 # Canary Launcher website
 
-React website based on the supplied Canary design, with Home, About and Download pages. The Home gallery includes the three actual launcher screenshots: Home, Discover and Library.
+React website based on the supplied Canary design, with Home, About and Download pages and an interactive gallery of the three launcher screenshots.
 
-## Run locally
+## GitHub Pages
+
+The repository includes a ready-to-serve static release: `index.html`, `assets/`, `screenshots/` and `.nojekyll`. GitHub Pages can publish **main / (root)** directly. No build step on the hosting service is required. Relative asset paths support both the domain root and `/canarylauncher-site/`.
+
+## Development
 
 Requires Node.js 20.19+ or 22.12+.
 
@@ -11,14 +15,14 @@ npm ci
 npm run dev
 ```
 
-## Production build
+The development source entry is **/app.html** (Vite opens it automatically). Edit `src/` and `app.html`, then regenerate the static release:
 
 ```sh
 npm run build
 npm run preview
 ```
 
-Deploy the generated `dist/` directory to a static host. Relative asset paths support hosting at a domain root or a subdirectory such as `/canarylauncher-site/`. The repository's root `index.html` is the Vite entry point and requires the build step.
+The build updates `index.html`, `assets/` and `screenshots/` in the repository root and also creates `dist/` for other static hosts. Commit the generated root files together with source changes. Do not edit the generated `index.html` directly.
 
 ## Gallery
 
