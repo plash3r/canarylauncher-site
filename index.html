@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#030712" />
+    <script>
+      try { document.documentElement.dataset.theme = localStorage.getItem('canary-theme') === 'light' ? 'light' : 'dark'; } catch {}
+    </script>
     <link rel="icon" type="image/png" href="./assets/canary-bird-white-5geVqdqT.png" />
     <meta name="description" content="Discover Canary, a calm and lightweight Minecraft launcher. Explore its interface, modpacks and instance management." />
     <title>Canary — Minecraft Launcher</title>
-    <script defer src="./js/app.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/app.js?v=86d19cbfd3ff"></script>
+    <link rel="stylesheet" href="./css/style.css?v=176b6e119b6f">
   </head>
   <body>
     <div id="root"></div>
