@@ -18,11 +18,25 @@ npm run build
 npm run preview
 ```
 
-The build creates `dist/` and updates the ready-to-serve files in the repository root: `index.html`, `assets/`, `screenshots/`, `brand/`, `platforms/` and `.nojekyll`. Commit these generated files together with source changes. Do not edit generated `index.html` directly.
+The build creates `dist/` and updates the ready-to-serve files in the repository root: `index.html`, `css/style.css`, `js/app.js`, `assets/`, `screenshots/`, `brand/`, `platforms/` and `.nojekyll`. It also prepares an empty `windows/` folder for installers without deleting existing files there. Commit generated website files together with source changes. Do not edit generated `index.html` directly.
+
+The release uses a classic deferred JavaScript bundle and an ordinary external stylesheet. It supports both opening `index.html` directly on a computer and uploading the entire site to a static host. React is included in the JavaScript bundle, with no external CDN dependency.
 
 ## Hosting on Sprinthost
 
 Upload the **contents** of `dist/` into the domain's public web directory. Keep all folders beside `index.html`. No Node.js runtime is required on the host.
+
+```text
+index.html
+css/style.css
+js/app.js
+assets/
+brand/
+platforms/
+screenshots/
+windows/          # empty until you add the installer
+.nojekyll
+```
 
 The Windows download uses this site-root URL:
 
